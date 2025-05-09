@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CaptainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::get('aboutus' , function(){
     return view('pages.aboutus');
 });
+
+
+Route::resource('captains' ,CaptainController::class);
