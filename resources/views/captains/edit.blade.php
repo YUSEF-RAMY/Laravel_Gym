@@ -22,7 +22,17 @@
             <label for="phone" class="form-label">الرقم</label>
             <input type="text" name="phone" class="form-control" value="{{ old('phone', $captain->phone) }}" required>
         </div>
+        {{-- data links  --}}
+        <div class="mb-3">
+            <label for="facebook" class="form-label">الفيس بوك</label>
+            <input type="text" name="facebook" class="form-control" value="{{ old('facebook', $captain->facebook) }}" required>
+        </div>
 
+        <div class="mb-3">
+            <label for="instgram" class="form-label">الانستجرام</label>
+            <input type="text" name="instgram" class="form-control" value="{{ old('instgram', $captain->instgram) }}" required>
+        </div>
+        {{-- end data links  --}}
         <div class="mb-3">
             <label for="image" class="form-label">صورة (اختياري)</label>
             <input type="file" name="image" class="form-control">

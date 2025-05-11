@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Captain extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'specialty', 'phone', 'image'];
+    protected $fillable = ['name', 'specialty','facebook', 'instgram' , 'phone', 'image'];
 }

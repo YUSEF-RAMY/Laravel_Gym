@@ -13,4 +13,11 @@ class WelcomeController extends Controller
         $captain = Captain::all();
         return view('welcome' , compact('captain'));
     }
+    
+
+    public function ourTeam()
+    {
+        $captains = Captain::all();
+        return view('pages.ourTeam' , compact('captains'));
+    }
 }
