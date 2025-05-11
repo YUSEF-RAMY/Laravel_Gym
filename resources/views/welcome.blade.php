@@ -63,12 +63,12 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="/">Home</a></li>
-                            <li><a href="/aboutus">About Us</a></li>
-                            <li><a href="./class-details.html">Classes</a></li>
-                            <li><a href="./services.html">Services</a></li>
-                            <li><a href="./team.html">Our Team</a></li>
-                            <li><a href="#">Pages</a>
+                            <li class="active"><a href="/">الرئيسيه</a></li>
+                            <li><a href="/aboutus">من نحن</a></li>
+                            {{-- <li><a href="./class-details.html">Classes</a></li> --}}
+                            {{-- <li><a href="./services.html">Services</a></li> --}}
+                            {{-- <li><a href="./team.html">Our Team</a></li> --}}
+                            {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about-us.html">About us</a></li>
                                     <li><a href="./class-timetable.html">Classes timetable</a></li>
@@ -78,8 +78,9 @@
                                     <li><a href="./blog.html">Our blog</a></li>
                                     <li><a href="./404.html">404</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            </li> --}}
+                            {{-- <li><a href="./contact.html">Contact</a></li> --}}
+                            <li><a href="/captains">التحكم</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -112,9 +113,9 @@
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
-                                <span>Shape your body</span>
-                                <h1>Be <strong>strong</strong> traning hard</h1>
-                                <a href="#" class="primary-btn">Get info</a>
+                                <span style="letter-spacing: 0px">اصنع جسمك</span>
+                                <h1>كون <strong>اقوي </strong>مع شمابلين جيم</h1>
+                                {{-- <a href="#" class="primary-btn">معلومات اكثر</a> --}}
                             </div>
                         </div>
                     </div>
@@ -125,9 +126,9 @@
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
-                                <span>Shape your body</span>
-                                <h1>Be <strong>strong</strong> traning hard</h1>
-                                <a href="#" class="primary-btn">Get info</a>
+                                <span style="letter-spacing: 0px">اصنع جسمك</span>
+                                <h1>مع <strong>الشمبلي</strong> مفيش مستحيل</h1>
+                                {{-- <a href="#" class="primary-btn">Get info</a> --}}
                             </div>
                         </div>
                     </div>
@@ -391,31 +392,19 @@
                 </div>
             </div>
             <div class="row">
+                
                 <div class="ts-slider owl-carousel">
+                    @foreach ($captain as $item)
                     <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/team-1.jpg">
+                        <div class="ts-item set-bg">
+                            <img src="{{ $item->image }}" alt="">
                             <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
+                                <h4>{{ $item->name }}</h4>
+                                <span>{{ $item->specialty }}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/team-2.jpg">
-                            <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="img/team/team-3.jpg">
-                            <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

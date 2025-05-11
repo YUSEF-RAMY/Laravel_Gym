@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
 
         {{-- bootstarp --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC')}}" crossorigin="anonymous">
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" type="text/css">
@@ -24,11 +24,43 @@
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/datatable.Juery.css')}}">
+    @yield('head')
 
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #000; /* أو أي لون للفوتر */
+            color: #fff;
+            padding: 20px 0;
+        }
+    </style>
+    
 </head>
 <body>
     {{-- yield part --}}
-@yield('content')
+
+
+
+
+
+
+
+    @yield('content')
 
 
 
@@ -72,7 +104,7 @@
     <!-- Get In Touch Section End -->
 
     <!-- Footer Section Begin -->
-    <section class="footer-section">
+    <footer class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -133,12 +165,13 @@
             </div>
 
         </div>
-    </section>
+    </footer>
     <!-- Footer Section End -->
 
 
 
         <!-- Js Plugins -->
+    @yield('scripts')
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
@@ -147,6 +180,6 @@
     <script src="{{asset('js/jquery.slicknav.js')}}"></script>
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
-    <script src="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{asset('js/datatabelJquery')}}"></script>
 </body>
 </html>
