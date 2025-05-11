@@ -21,10 +21,11 @@
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="/">الصفحه الرئيسيه</a></li>
-                <li><a href="/aboutus">تواصل معنا</a></li>
-                <li><a href="./classes.html">اقسام الجيم</a></li>
-                <li><a href="./services.html">خدمات</a></li>
-                <li><a href="./team.html">فريقنا</a></li>
+                {{-- <li><a href="/aboutus">تواصل معنا</a></li> --}}
+                {{-- <li><a href="./classes.html">اقسام الجيم</a></li> --}}
+                {{-- <li><a href="./services.html">خدمات</a></li> --}}
+                <li><a href="/ourteam">فريقنا</a></li>
+                <li><a href="/captains">التحكم</a></li>
                 {{-- <li><a href="#">Pages</a>
                     <ul class="dropdown">
                         <li><a href="/aboutus">About us</a></li>
@@ -36,7 +37,7 @@
                         <li><a href="./404.html">404</a></li>
                     </ul>
                 </li> --}}
-                <li><a href="./contact.html">Contact</a></li>
+                {{-- <li><a href="./contact.html">Contact</a></li> --}}
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -55,19 +56,19 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="/">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <nav class="nav-menu">
+                    <nav class="nav-menu" dir="rtl">
                         <ul>
                             <li class="active"><a href="/">الرئيسيه</a></li>
-                            <li><a href="/aboutus">من نحن</a></li>
+                            {{-- <li><a href="/aboutus">من نحن</a></li> --}}
                             {{-- <li><a href="./class-details.html">Classes</a></li> --}}
                             {{-- <li><a href="./services.html">Services</a></li> --}}
-                            {{-- <li><a href="./team.html">Our Team</a></li> --}}
+                            <li><a href="/ourteam">فريقنا</a></li>
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about-us.html">About us</a></li>
@@ -80,7 +81,7 @@
                                 </ul>
                             </li> --}}
                             {{-- <li><a href="./contact.html">Contact</a></li> --}}
-                            <li><a href="/captains">التحكم</a></li>
+                            <li><a href="/captains" class="mx-3">التحكم</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -387,7 +388,7 @@
                             <span class="fs-3">فريقنا</span>
                             <h2>تدريب مع الخبراء</h2>
                         </div>
-                        <a href="#" class="primary-btn btn-normal appoinment-btn">سجل الان</a>
+                        {{-- <a href="#" class="primary-btn btn-normal appoinment-btn">سجل الان</a> --}}
                     </div>
                 </div>
             </div>

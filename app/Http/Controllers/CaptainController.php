@@ -38,6 +38,8 @@ class CaptainController extends Controller
             'name' => 'required|string',
             'specialty' => 'required|string',
             'phone' => 'required',
+            'facebook' => 'nullable|url',
+            'instgram' => 'nullable|url',
             'image' => 'required|image|max:2048',
         ]);
         //add captains
@@ -77,6 +79,8 @@ class CaptainController extends Controller
             'name' => 'required|string',
             'specialty' => 'required|string',
             'phone' => 'nullable',
+            'facebook' => 'nullable|url',
+            'instgram' => 'nullable|url',
             'image' => 'nullable|image|max:2048',
         ]);
 

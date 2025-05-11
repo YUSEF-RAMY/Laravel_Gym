@@ -16,6 +16,7 @@ use App\Http\Controllers\WelcomeController;
 */
 
 Route::get('/' , [WelcomeController::class , 'index']);
+Route::get('/ourteam' , [WelcomeController::class , 'ourTeam']);
 
 Route::get('aboutus' , function(){
     return view('pages.aboutus');
