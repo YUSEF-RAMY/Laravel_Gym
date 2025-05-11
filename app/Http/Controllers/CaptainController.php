@@ -11,23 +11,26 @@ class CaptainController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * بتروح للصفحه الرئيسيه وتعرف البيانات الي هي الداشبود
      */
     public function index()
     {
         $captains = Captain::all();
-        return view('dashb' , compact('captains'));
+        return view('captains.captain' , compact('captains'));
     }
 
     /**
      * Show the form for creating a new resource.
+     * بتوديني علي الصفحه الي فهه فورم الاضافه
      */
     public function create()
     {
-        return view('capains.create');
+        return view('captains.add');
     }
 
     /**
      * Store a newly created resource in storage.
+     * بتخزن البيانات بقي 
      */
     public function store(Request $request)
     {
@@ -57,6 +60,7 @@ class CaptainController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * بيعرض الفورم بتاعه التعديل في صفحه تانيه
      */
     public function edit(Captain $captain)
     {
@@ -65,19 +69,20 @@ class CaptainController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * بيخذن البيانات بعدالتعديل
      */
     public function update(Request $request, Captain $captain)
     {
         $data = $request->validate([
             'name' => 'required|string',
             'specialty' => 'required|string',
-            'phone' => 'required',
-            'image' => 'required|image|max:2048',
+            'phone' => 'nullable',
+            'image' => 'nullable|image|max:2048',
         ]);
 
         if($request->hasFile('image')){
             // delete old image
-            if ($captain->image) {
+            if ($captain->image && file_exists(public_path(($captain->image)))) {
                 unlink(public_path($captain->image));
             }
             // store a new image
@@ -90,11 +95,10 @@ class CaptainController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * حذف البيانات
      */
     public function destroy(Captain $captain)
     {
-        // delete image if isset
-        $captain = Captain::findOrFail($captain);
         $captain->delete();
         return redirect()->route('captains.index')->with('success' , 'تم الحذف بنجاح');
     }
