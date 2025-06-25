@@ -22,10 +22,4 @@ class WelcomeController extends Controller
         $captains = Captain::all();
         return view('pages.ourTeam' , compact('captains'));
     }
-
-    public function feedback()
-    {
-        $contact = Contact::all();
-        return view('layouts.master' , compact('contact'));
-    }
 }
