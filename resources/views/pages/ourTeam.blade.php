@@ -69,7 +69,7 @@
                             {{-- <li><a href="./class-details.html">Classes</a></li> --}}
                             {{-- <li><a href="./services.html">Services</a></li> --}}
                             <li class="active mx-2"><a href="/ourteam">فريقنا</a></li>
-                            <li><a href="/contacts">تواصل معنا</a></li>
+                            {{-- <li><a href="/contacts">تواصل معنا</a></li> --}}
                             <li class=""><a href="/captains">التحكم</a></li>
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">

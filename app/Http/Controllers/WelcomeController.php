@@ -12,8 +12,8 @@ class WelcomeController extends Controller
     public function index()
     {
         $captain = Captain::all();
-        $contact = Contact::latest()->take(5)->get();
-        return view('welcome' , compact('captain' , 'contact'));
+        $comments = Contact::latest()->take(5)->get();
+        return view('welcome' , compact('captain' , 'comments'));
     }
     
 
@@ -21,5 +21,11 @@ class WelcomeController extends Controller
     {
         $captains = Captain::all();
         return view('pages.ourTeam' , compact('captains'));
+    }
+
+    public function masterData()
+    {
+        $comments = Contact::latest()->take(5)->get();
+        return view('layouts.master' , compact('comments'));
     }
 }

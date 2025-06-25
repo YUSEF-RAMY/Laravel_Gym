@@ -151,11 +151,14 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 style="color:white; " class="text-center">راي العميل</h4>
+                    <h4 style="color:white; " class="text-center"> راي العميل </h4>
+                    <div class="text-center">
+                        <a href="/contacts" style="background-color: #f36100;" class="btn mt-1">ضيف رايك</a>
+                    </div>
                     <div id="testimonialSlider" class="carousel slide d-none" data-bs-ride="carousel" data-bs-interval="3000">
                         <div class="carousel-inner text-center bg-black p-5 rounded">
 
-                            @foreach ($contact as $item)
+                            @foreach ($comments as $item)
                                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                     @if($item)
                                     <h4 style="color: white;">{{ $item->name }}</h4>

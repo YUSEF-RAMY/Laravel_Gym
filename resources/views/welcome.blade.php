@@ -21,7 +21,7 @@
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="/">الصفحه الرئيسيه</a></li>
-                <li><a href="/contacts">تواصل معنا</a></li>
+                {{-- <li><a href="/contacts">تواصل معنا</a></li> --}}
                 {{-- <li><a href="./classes.html">اقسام الجيم</a></li> --}}
                 {{-- <li><a href="./services.html">خدمات</a></li> --}}
                 <li><a href="/ourteam">فريقنا</a></li>
@@ -69,7 +69,7 @@
                             {{-- <li><a href="./class-details.html">Classes</a></li> --}}
                             {{-- <li><a href="./services.html">Services</a></li> --}}
                             <li><a href="/ourteam">فريقنا</a></li>
-                            <li><a href="/contacts">تواصل معنا</a></li>
+                            {{-- <li><a href="/contacts">تواصل معنا</a></li> --}}
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about-us.html">About us</a></li>

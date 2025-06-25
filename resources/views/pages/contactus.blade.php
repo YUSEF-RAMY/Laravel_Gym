@@ -21,7 +21,7 @@
                             {{-- <li><a href="./class-details.html">Classes</a></li> --}}
                             {{-- <li><a href="./services.html">Services</a></li> --}}
                             <li class="mx-2"><a href="/ourteam">فريقنا</a></li>
-                            <li class="active mx-2"><a href="/contacts">تواصل معنا</a></li>
+                            {{-- <li class="active mx-2"><a href="/contacts">تواصل معنا</a></li> --}}
                             <li class=""><a href="/captains">التحكم</a></li>
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -75,9 +75,14 @@
             </div>
         </div>
     </section>
-<h2>yusef ramy saber</h2>
-<section class="contact-section spad" dir="rtl">
+    
+    <section class="contact-section spad" dir="rtl">
         <div class="container" dir="rtl">
+            @if(session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
             <div class="row">
                 <div class="col-lg-6" dir="rtl" >
                     <div class="section-title contact-title">
@@ -115,7 +120,7 @@
                 </div>
             </div>
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12087.069761554938!2d-74.2175599360452!3d40.767139456514954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c254b5958982c3%3A0xb6ab3931055a2612!2sEast%20Orange%2C%20NJ%2C%20USA!5e0!3m2!1sen!2sbd!4v1581710470843!5m2!1sen!2sbd" height="550" style="border:0;" allowfullscreen=""></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3413.4668130378464!2d31.228453075937683!3d31.180067563875532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDEwJzQ4LjIiTiAzMcKwMTMnNTEuNyJF!5e0!3m2!1sen!2seg!4v1750870041088!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
