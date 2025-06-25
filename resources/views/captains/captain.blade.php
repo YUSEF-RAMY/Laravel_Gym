@@ -2,13 +2,12 @@
 
 
 @section('head')
-
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.0/css/dataTables.dataTables.min.css">
 @endsection
 
 @section('content')
-<!-- Page Preloder -->
+    <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
@@ -31,7 +30,7 @@
                 <li><a href="/ourteam">فريقنا</a></li>
                 <li><a href="/captains">التحكم</a></li>
                 {{-- <li><a href="#">Pages</a> --}}
-                    {{-- <ul class="dropdown">
+                {{-- <ul class="dropdown">
                         <li><a href="./about-us.html">About us</a></li>
                         <li><a href="./class-timetable.html">Classes timetable</a></li>
                         <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
@@ -72,8 +71,8 @@
                             {{-- <li><a href="/aboutus">About Us</a></li> --}}
                             {{-- <li><a href="./class-details.html">Classes</a></li> --}}
                             {{-- <li><a href="./services.html">Services</a></li> --}}
-                            <li class="active mx-2"><a href="/ourteam">فريقنا</a></li>
-                            <li class=""><a href="/captains">التحكم</a></li>
+                            <li class=" mx-2"><a href="/ourteam">فريقنا</a></li>
+                            <li class="active"><a href="/captains">التحكم</a></li>
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about-us.html">About us</a></li>
@@ -126,46 +125,49 @@
 
 
 
-<h2 class="d-flex justify-content-center mt-5">Captain</h2><br>
+    <h2 class="d-flex justify-content-center mt-5">Captain</h2><br>
 
-<div class="container mt-4 mx-auto w-75 ">
-    <div class="d-flex justify-content-center align-items-center mb-3">
-        <a href="{{route('captains.create')}}" class="btn btn-success">Add Captain</a>
-    </div>
-    <table id="myTable" class="display table table-striped table-responsive">
-        <thead>
-                <tr>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>specialty</th>
-                    <th>phone</th>
-                    <th>image</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-                @foreach ($captains as $captain)
-                <tr>
-                    <td>{{$captain->id}}</td>
-                    <td>{{$captain->name}}</td>
-                    <td>{{$captain->specialty}}</td>
-                    <td>{{$captain->phone}}</td>
-                    <td><img src="{{$captain->image}}" alt="صوره المنتج" width="75"></td>
-                    <td>
-                        <a href="{{route('captains.edit', $captain->id)}}" class="btn btn-primary">edit</a>
-                        
-                        <form action="{{route('captains.destroy', $captain->id)}}" method="POST" style="display: inline" >
-                            @csrf
-                            @method('DELETE')
-                            <button onclick="return confirm('هل انت متاكد من عمليه الحذف')" class="btn btn-danger">delete</button>
-                        </form>
-                    </td>
-                </tr>
-                
-                @endforeach
-            </tbody>
-        </table>
+    <div class="container mt-4  w-75">
+        <div class="d-flex justify-content-center align-items-center mb-3">
+            <a href="{{ route('captains.create') }}" class="btn btn-success">Add Captain</a>
+        </div>
+        <div class="table-responsive">
+            <table id="myTable" class="display table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>specialty</th>
+                        <th>phone</th>
+                        <th>image</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach ($captains as $captain)
+                        <tr>
+                            <td>{{ $captain->id }}</td>
+                            <td>{{ $captain->name }}</td>
+                            <td>{{ $captain->specialty }}</td>
+                            <td>{{ $captain->phone }}</td>
+                            <td><img src="{{ $captain->image }}" alt="صوره المنتج" width="75"></td>
+                            <td>
+                                <a href="{{ route('captains.edit', $captain->id) }}" class="btn btn-primary">edit</a>
+
+                                <form action="{{ route('captains.destroy', $captain->id) }}" method="POST"
+                                    style="display: inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button onclick="return confirm('هل انت متاكد من عمليه الحذف')"
+                                        class="btn btn-danger">delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     <hr class="my-5">
 @endsection
@@ -177,12 +179,18 @@
     <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/2.3.0/js/dataTables.min.js"></script>
     {{-- bootstrap  --}}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <!-- التهيئة -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             let table = new DataTable('#myTable');
         });
     </script>
