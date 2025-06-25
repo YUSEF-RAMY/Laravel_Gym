@@ -21,7 +21,7 @@
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="/">الصفحه الرئيسيه</a></li>
-                {{-- <li><a href="/aboutus">تواصل معنا</a></li> --}}
+                <li><a href="/contacts">تواصل معنا</a></li>
                 {{-- <li><a href="./classes.html">اقسام الجيم</a></li> --}}
                 {{-- <li><a href="./services.html">خدمات</a></li> --}}
                 <li><a href="/ourteam">فريقنا</a></li>
@@ -69,6 +69,7 @@
                             {{-- <li><a href="./class-details.html">Classes</a></li> --}}
                             {{-- <li><a href="./services.html">Services</a></li> --}}
                             <li><a href="/ourteam">فريقنا</a></li>
+                            <li><a href="/contacts">تواصل معنا</a></li>
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about-us.html">About us</a></li>
@@ -266,7 +267,7 @@
     <!-- ChoseUs Section End -->
 
     <!-- Banner Section Begin -->
-    <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
+    {{-- <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -278,7 +279,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Banner Section End -->
 
     <!-- Pricing Section Begin -->
@@ -411,6 +412,41 @@
         </div>
     </section>
     <!-- Team Section End -->
+
+    <!-- أضف هذا داخل <head> لو مش عندك Bootstrap -->
+{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+
+{{-- <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner text-center bg-dark p-5 rounded">
+
+    <div class="carousel-item active">
+      <h5>أحمد محمد</h5>
+      <p class="text-muted">خدمة ممتازة جدًا، والتعامل احترافي!</p>
+    </div>
+
+    <div class="carousel-item">
+      <h5>سارة علي</h5>
+      <p class="text-muted">استلمت طلبي في المعاد بالضبط، شكراً ليكم.</p>
+    </div>
+
+    <div class="carousel-item">
+      <h5>محمود سامي</h5>
+      <p class="text-muted">أكتر من رائع! أنصح أي حد بيهم.</p>
+    </div>
+
+  </div>
+
+  <!-- أزرار التنقل -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#testimonialSlider" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#testimonialSlider" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div> --}}
+
+<!-- سكربت Bootstrap -->
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
 
 
     <!-- Search model Begin -->
