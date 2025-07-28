@@ -28,12 +28,12 @@
         {{-- data links  --}}
         <div class="mb-3">
             <label for="facebook" class="form-label">الفيس بوك</label>
-            <input type="text" name="facebook" class="form-control" required>
+            <input type="text" name="facebook" class="form-control">
         </div>
 
         <div class="mb-3">
             <label for="instgram" class="form-label">الانستا</label>
-            <input type="text" name="instgram" class="form-control" required>
+            <input type="text" name="instgram" class="form-control">
         </div>
         {{-- end data links  --}}
         <div class="mb-3">

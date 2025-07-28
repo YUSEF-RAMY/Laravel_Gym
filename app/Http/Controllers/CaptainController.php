@@ -47,7 +47,6 @@ class CaptainController extends Controller
             $image = $request->file('image')->move('uploads/captains', Str::uuid()->toString() . '-' . $request->file('image')->getClientOriginalName());
             $data['image'] = $image;
         }
-
         Captain::create($data);
         return redirect()->route('captains.index')->with('success' , 'تم اضافة بنجاح');
     }
