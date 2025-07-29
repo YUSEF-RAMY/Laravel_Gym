@@ -82,7 +82,35 @@
                                 </ul>
                             </li> --}}
                             {{-- <li><a href="./contact.html">Contact</a></li> --}}
-                            <li><a href="/captains" class="mx-3">التحكم</a></li>
+                            @auth
+                            {{-- عايز اعمل هنا لما الايميل يكون بتاعي يبقي باين ليا كل حاجه =========== --}}
+                            @if (auth()->user()->role == 'admin')
+                            <li><a class="mx-4" href="/captains" >التحكم</a></li>
+                            @endif
+                            {{-- <li style="color: white">{{ auth()->user()->name }}</li> --}}
+                            <li><a class="mx-3" href="#">{{ auth()->user()->name }}▾</a>
+                                <ul class="dropdown">
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                        <form action="{{ route('logout') }}" method="POST" id="logout-and-login">
+                                            @csrf
+                                            <input type="hidden" name="redirect-login-again">
+                                        </form>
+                                    </li>
+                                    <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();" class="mx-auto">تسجيل خروج</a></li>
+                                    {{-- فيه مشكله هنا انو مش بيوديني علي الصفحه الي اغير منها الاكونت --}}
+                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-and-login').submit();">الدخول بمستخدم تاني</a></li>
+                                </ul>
+                            @endauth
+                            @guest
+                            <li><a href="/login" class="mx-3">تسجيل الدخول</a></li>
+                            <li><a href="/register" class="mx-3">مستخدم جديد</a></li>
+                            @endguest
                         </ul>
                     </nav>
                 </div>
@@ -116,7 +144,7 @@
                         <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
                                 <span style="letter-spacing: 0px">اصنع جسمك</span>
-                                <h1>كون <strong>اقوي </strong>مع شمابلين جيم</h1>
+                                <h1>كون <strong>اقوي </strong>مع شمبليون جيم</h1>
                                 {{-- <a href="#" class="primary-btn">معلومات اكثر</a> --}}
                             </div>
                         </div>

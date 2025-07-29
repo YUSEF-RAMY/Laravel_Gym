@@ -28,7 +28,9 @@
                 {{-- <li><a href="./class-details.html">Classes</a></li> --}}
                 {{-- <li><a href="./services.html">Services</a></li> --}}
                 <li><a href="/ourteam">فريقنا</a></li>
+                @if (auth()->user()->role === 'admin')
                 <li><a href="/captains">التحكم</a></li>
+                @endif
                 {{-- <li><a href="#">Pages</a> --}}
                 {{-- <ul class="dropdown">
                         <li><a href="./about-us.html">About us</a></li>
@@ -72,7 +74,30 @@
                             {{-- <li><a href="./class-details.html">Classes</a></li> --}}
                             {{-- <li><a href="./services.html">Services</a></li> --}}
                             <li class=" mx-2"><a href="/ourteam">فريقنا</a></li>
-                            <li class="active"><a href="/captains">التحكم</a></li>
+                            @auth
+                            {{-- عايز اعمل هنا لما الايميل يكون بتاعي يبقي باين ليا كل حاجه =========== --}}
+                            @if (auth()->user()->role == 'admin')
+                            <li><a class="mx-4" href="/captains" >التحكم</a></li>
+                            @endif
+                            {{-- <li style="color: white">{{ auth()->user()->name }}</li> --}}
+                            <li><a class="mx-3" href="#">{{ auth()->user()->name }}▾</a>
+                                <ul class="dropdown">
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                    <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();" class="mx-auto">تسجيل خروج</a></li>
+                                    <li><a href="/login">الدخول بمستخدم تاني</a></li>
+                                </ul>
+                            @endauth
+                            @guest
+                            <li><a href="/login" class="mx-3">تسجيل الدخول</a></li>
+                            <li><a href="/register" class="mx-3">مستخدم جديد</a></li>
+                            @endguest
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about-us.html">About us</a></li>

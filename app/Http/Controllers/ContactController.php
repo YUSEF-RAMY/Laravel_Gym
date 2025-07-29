@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -36,7 +37,12 @@ class ContactController extends Controller
             'email' => 'email|max:255',
             'comment' => 'required|string',
         ]);
-        Contact::create($request->only(['name' , 'phone' , 'email' , 'comment']));
+        $data =Contact::create($request->only(['name' , 'phone' , 'email' , 'comment']));
+        $sendMain = Mail::send('mails.pageMail_feedback', compact('data'), function ($message) {
+            $message->sender('Champollion@Laravel.com', 'sudo');
+            $message->to('yuseframy14@gmail.com', 'yusef');
+            $message->subject('راي عميل جديد');
+        });
         return redirect()->back()->with('success' , 'شكرا علي رايك');
     }
 
