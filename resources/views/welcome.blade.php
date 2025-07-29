@@ -95,12 +95,16 @@
                                             class="d-none">
                                             @csrf
                                         </form>
+                                        <form action="{{ route('logout') }}" method="POST" id="logout-and-login">
+                                            @csrf
+                                            <input type="hidden" name="redirect-login-again">
+                                        </form>
                                     </li>
                                     <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
 														document.getElementById('logout-form').submit();" class="mx-auto">تسجيل خروج</a></li>
                                     {{-- فيه مشكله هنا انو مش بيوديني علي الصفحه الي اغير منها الاكونت --}}
-                                    <li><a href="{{ route('login') }}">الدخول بمستخدم تاني</a></li>
+                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-and-login').submit();">الدخول بمستخدم تاني</a></li>
                                 </ul>
                             @endauth
                             @guest
